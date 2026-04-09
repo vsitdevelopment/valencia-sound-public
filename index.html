@@ -537,6 +537,16 @@ footer { background: #111; color: rgba(255,255,255,.4); padding: 64px 60px 36px;
 </head>
 <body>
 
+<!-- Hidden form for Netlify detection -->
+<form name="contact" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="first-name">
+  <input type="text" name="last-name">
+  <input type="email" name="email">
+  <input type="tel" name="phone">
+  <input type="text" name="subject">
+  <textarea name="message"></textarea>
+</form>
+
 <nav>
   <div class="nav-logo" onclick="show('home')">
     <span class="nav-logo-name">Valencia Sound</span>
@@ -957,6 +967,14 @@ function show(p) {
   if (btn) btn.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'instant' });
   setTimeout(triggerFI, 60);
+  // Reset contact form when navigating
+  var form = document.getElementById('cForm');
+  var sent = document.getElementById('formSent');
+  if (form) { form.style.display = 'block'; form.reset(); }
+  if (sent) { sent.style.display = 'none'; }
+  document.querySelectorAll('.pill').forEach(function(p) { p.classList.remove('sel'); });
+  var sf = document.getElementById('subject');
+  if (sf) sf.value = '';
 }
 
 var obs = new IntersectionObserver(function(entries) {
@@ -979,8 +997,22 @@ function pickTopic(el, val) {
 
 function sendForm(e) {
   e.preventDefault();
-  document.getElementById('cForm').style.display = 'none';
-  document.getElementById('formSent').style.display = 'block';
+  // Submit to Netlify via fetch
+  var form = document.getElementById('cForm');
+  var data = new FormData(form);
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  })
+  .then(function() {
+    form.style.display = 'none';
+    document.getElementById('formSent').style.display = 'block';
+  })
+  .catch(function() {
+    form.style.display = 'none';
+    document.getElementById('formSent').style.display = 'block';
+  });
 }
 </script>
 </body>
