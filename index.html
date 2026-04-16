@@ -255,7 +255,10 @@ h3 {
   aspect-ratio: 4/3;
   position: relative; overflow: hidden;
 }
-
+/*Make amenities single picture - TEMP */
+.photo-grid.single { grid-template-columns: 1fr; }
+.photo-grid.single .photo-cell:last-child { display: none; }
+  
 /* CENTERED BLOCK */
 .centered-block {
   padding: 96px 60px;
@@ -722,7 +725,7 @@ footer { background: #111; color: rgba(255,255,255,.4); padding: 64px 60px 36px;
       <p class="sec-badge">Social Spaces</p>
       <h2>Amenities Designed<br>for Your Lifestyle</h2>
       <p class="lead">Meet, relax and enjoy our lifestyle at the 39,000 square-foot Clubhouse which hosts live entertainment, shows, events and seasonal parties. Three game rooms and a social hall offer space for everything from poker and canasta to mahjong and more. A fully equipped demonstration kitchen and an arts and crafts room are additional places to learn, play and create.</p>
-      <div class="photo-grid">
+      <div class="photo-grid single">
         <div class="photo-cell" style="background-image:url('images/VS_lobby.jpg');background-size:cover;background-position:center">
         </div>
         <div class="photo-cell" style="background-image:url('images/Arts_and_crafts_room.jpg');background-size:cover;background-position:center">
@@ -737,10 +740,10 @@ footer { background: #111; color: rgba(255,255,255,.4); padding: 64px 60px 36px;
       <p class="sec-badge">Community Involvement</p>
       <h2>A Club for<br>Every Interest</h2>
       <p class="lead">A variety of resident-run clubs are available to match every interest — from pickleball, tennis, softball, and bocce to book clubs, current affairs, cultural activities, arts and crafts, performing arts, poker, canasta, mahjong and hearts. Currently there are more than 30 sanctioned clubs.</p>
-      <div class="photo-grid">
-        <div class="photo-cell" style="background-image:url('images/Clubhouse_circle.jpg');background-size:cover;background-position:center">
+      <div class="photo-grid single">
+        <div class="photo-cell" style="background-image:url('images/Arts_and_crafts_room.jpg');background-size:cover;background-position:center">
         </div>
-        <div class="photo-cell" style="background-image:url('images/Arts_and_crafts_room.jpg');background-size:cover;background-position:top">
+        <div class="photo-cell" style="background-image:url('images/Clubhouse_circle.jpg');background-size:cover;background-position:top">
         </div>
       </div>
     </div>
@@ -752,7 +755,7 @@ footer { background: #111; color: rgba(255,255,255,.4); padding: 64px 60px 36px;
       <p class="sec-badge">Sports</p>
       <h2>Where Great Play<br>Meets Great Company</h2>
       <p class="lead">The Racquet Center features 11 lighted Pickleball courts, 6 lighted Har-Tru Tennis courts and 4 lighted Bocce courts. Three experienced sports pros are available for private lessons and group instruction.</p>
-      <div class="photo-grid">
+      <div class="photo-grid single">
         <div class="photo-cell" style="background-image:url('images/Pickle_Ball_1.jpg');background-size:cover;background-position:center">
         </div>
         <div class="photo-cell" style="background-image:url('images/Pickle_Ball_1.jpg');background-size:cover;background-position:right center">
@@ -767,7 +770,7 @@ footer { background: #111; color: rgba(255,255,255,.4); padding: 64px 60px 36px;
       <p class="sec-badge">Health &amp; Wellness</p>
       <h2>Experience Community<br>in Every Space</h2>
       <p class="lead">Stay active at the state-of-the-art Fitness Center, located in our Clubhouse. It offers top-tier cardio equipment — including treadmills, spin and recumbent bikes, and elliptical machines — as well as a full range of free weights and strength-training machines. Certified personal trainers are available for one-on-one sessions. The separate group exercise studio is home to a variety of classes including Zumba, Pilates and Stretch and Balance.</p>
-      <div class="photo-grid">
+      <div class="photo-grid single">
         <div class="photo-cell" style="background-image:url('images/Fitness_1.jpg');background-size:cover;background-position:center">
         </div>
         <div class="photo-cell" style="background-image:url('images/Fitness_1.jpg');background-size:cover;background-position:left center">
@@ -782,7 +785,7 @@ footer { background: #111; color: rgba(255,255,255,.4); padding: 64px 60px 36px;
       <p class="sec-badge">Aquatics</p>
       <h2>Splash Into the Season<br>With Your Neighbors</h2>
       <p class="lead">The four resort-style pools feature a zero-entry main pool, a lap pool, a resistance pool, and even a kiddie pool for visiting grandkids. And of course, an outdoor hot tub, as well as an outdoor pool bar and poolside dining.</p>
-      <div class="photo-grid">
+      <div class="photo-grid single">
         <div class="photo-cell" style="background-image:url('images/Pool_1.jpg');background-size:cover;background-position:center">
         </div>
         <div class="photo-cell" style="background-image:url('images/Resistance_Pool.jpg');background-size:cover;background-position:center">
@@ -797,10 +800,10 @@ footer { background: #111; color: rgba(255,255,255,.4); padding: 64px 60px 36px;
       <p class="sec-badge">Dining</p>
       <h2>Where Great Food<br>Meets Great Company</h2>
       <p class="lead">Our full-service restaurant, located in the clubhouse, offers fresh, chef-curated lunch and dinner menus and specials. Our sports bar, adjacent to the restaurant, offers Happy Hour pricing, bar bites and a full restaurant menu. Live entertainment is featured periodically to enhance your night out.</p>
-      <div class="photo-grid">
-        <div class="photo-cell" style="background-image:url('images/Outside_Bar.jpg');background-size:cover;background-position:center">
-        </div>
+      <div class="photo-grid single">
         <div class="photo-cell" style="background-image:url('images/Legends_2.jpg');background-size:cover;background-position:center">
+        </div>
+        <div class="photo-cell" style="background-image:url('images/Outside_Bar.jpg');background-size:cover;background-position:center">
         </div>
       </div>
     </div>
